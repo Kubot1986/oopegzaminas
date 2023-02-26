@@ -1,0 +1,17 @@
+{
+    "name": "rytis/oopex",
+    "require": {
+        "smarty/smarty": "^4.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rytis\\Oopex\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rytis Petrauskas",
+            "email": "r.petrauskas@protonmail.com"
+        }
+    ]
+}
