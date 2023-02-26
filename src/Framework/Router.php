@@ -27,6 +27,9 @@ class Router
             case '/list':
                 $this->resultController->getList();
                 break;
+            case '/update':
+                            $this->resultController->updateEntry();
+                break;
             case '/create':
                 $this->resultController->create($request);
                 break;

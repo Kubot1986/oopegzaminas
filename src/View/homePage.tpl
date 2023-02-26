@@ -65,6 +65,10 @@
                         <input id="parinktaData" name="parinktaData" type="date" required placeholder="pasirinktaData">
                     </td>
                     <td>
+
+                        <input id="apmoketa" name="apmoketa" type="hidden" value=0>
+                    </td>
+                    <td>
                         <input type="submit" value="Skaiciuoti kaina">
                     </td>
                 </tr>

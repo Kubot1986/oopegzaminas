@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-02-26 13:08:16
+/* Smarty version 4.3.0, created on 2023-02-26 16:52:37
   from 'C:\xampp\htdocs\oopex\src\View\homePage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_63fb4bb0095ef3_93184437',
+  'unifunc' => 'content_63fb80456fb3a8_82391165',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ec63345cb1f0b950038024bd7979391c21b4142d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\oopex\\src\\View\\homePage.tpl',
-      1 => 1677413290,
+      1 => 1677426751,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63fb4bb0095ef3_93184437 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63fb80456fb3a8_82391165 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,6 +86,10 @@ function content_63fb4bb0095ef3_93184437 (Smarty_Internal_Template $_smarty_tpl)
                     <td>
                         <label for="parinktaData">Parinkta data</label>
                         <input id="parinktaData" name="parinktaData" type="date" required placeholder="pasirinktaData">
+                    </td>
+                    <td>
+
+                        <input id="apmoketa" name="apmoketa" type="hidden" value=0>
                     </td>
                     <td>
                         <input type="submit" value="Skaiciuoti kaina">

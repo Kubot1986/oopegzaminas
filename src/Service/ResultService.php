@@ -2,6 +2,9 @@
 
 namespace Rytis\Oopex\Service;
 
+use DateTime;
+use DateTimeInterface;
+
 class ResultService
 {
     const DATA_FILE_PATH = './src/Files/data.json';
@@ -13,13 +16,24 @@ class ResultService
             'kaina'=>$requestB['kaina'],
             'dieninis'=>$requestB['dieninis'],
             'parinktaData'=>$requestB['parinktaData'],
-            'dateCreated' => date('Y:m:d H:d:s'),
-            'apmoketa'=>boolval(false)
+            'dateCreated' => date('Y:m:d H:i:s'),
+            'apmoketa'=>false
 
         ];
 
         $fileContent = $this->getContentFromFile();
         $fileContent[] = $content;
+        $nowTime=new DateTime();
+        $selectedTime=new Datetime($requestB['parinktaData']);
+        $timeDiff=$nowTime->diff($selectedTime);
+        if((intval($timeDiff->format('%M')))<1){
+            die('Dar per anksti deklaruoti');
+        };
+        if((intval($timeDiff->format('%a')))>60){
+            $velavimas=(intval($timeDiff->format('%a')))-30;
+            die("Veluojate $velavimas d.");
+        };
+
 
         $this->putContentToFile($fileContent);
     }
@@ -33,4 +47,5 @@ class ResultService
     {
         file_put_contents(self::DATA_FILE_PATH, json_encode($content));
     }
+
 }

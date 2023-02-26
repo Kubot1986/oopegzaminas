@@ -60,17 +60,24 @@
             <th>Dieninis tarifas</th>
             <th>Created at</th>
             <th>Viso:(eur)</th>
+            <th>Apmoketa?</th>
         </tr>
         {foreach $resultList as $key => $result}
+
             <tr>
                 <td>{$result.sunaudota}</td>
                 <td>{$result.kaina}</td>
                 <td>{$result.dieninis}</td>
                 <td>{$result.dateCreated}</td>
                 <td>{$result.sunaudota*$result.kaina}</td>
+                <td>{$result.apmoketa}</td>
             </tr>
+
         {/foreach}
-    </table>
+        <a href="/oopex/update"><button>Deklaruoti ir sumoketi<button</a>
+            </table>
+
+
 </main>
 </body>
 </html>
