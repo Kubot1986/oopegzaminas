@@ -53,6 +53,7 @@
     </div>
 </header>
 <main>
+    <form method="post" action="/oopex/update">
     <table>
         <tr>
             <th>Sunaudota (kWh)</th>
@@ -60,23 +61,23 @@
             <th>Dieninis tarifas</th>
             <th>Created at</th>
             <th>Viso:(eur)</th>
-            <th>Apmoketa?</th>
         </tr>
-        {foreach $resultList as $key => $result}
 
+        {foreach $resultList as $key => $result}
+{if $result.apmoketa=='0'}
             <tr>
                 <td>{$result.sunaudota}</td>
                 <td>{$result.kaina}</td>
                 <td>{$result.dieninis}</td>
                 <td>{$result.dateCreated}</td>
                 <td>{$result.sunaudota*$result.kaina}</td>
-                <td>{$result.apmoketa}</td>
             </tr>
-
+        {/if}
         {/foreach}
-        <a href="/oopex/update"><button>Deklaruoti ir sumoketi<button</a>
-            </table>
 
+            <button type="submit">Deklaruoti ir apmoketi</button>
+            </table>
+    </form>
 
 </main>
 </body>

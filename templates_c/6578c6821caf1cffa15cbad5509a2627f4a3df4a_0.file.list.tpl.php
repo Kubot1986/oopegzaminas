@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-02-26 17:09:45
+/* Smarty version 4.3.0, created on 2023-02-27 10:34:08
   from 'C:\xampp\htdocs\oopex\src\View\list.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_63fb84497d7245_24722058',
+  'unifunc' => 'content_63fc79101e0e07_07209648',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6578c6821caf1cffa15cbad5509a2627f4a3df4a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\oopex\\src\\View\\list.tpl',
-      1 => 1677427784,
+      1 => 1677490445,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63fb84497d7245_24722058 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63fc79101e0e07_07209648 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,6 +76,7 @@ function content_63fb84497d7245_24722058 (Smarty_Internal_Template $_smarty_tpl)
     </div>
 </header>
 <main>
+    <form method="post" action="/oopex/update">
     <table>
         <tr>
             <th>Sunaudota (kWh)</th>
@@ -83,15 +84,14 @@ function content_63fb84497d7245_24722058 (Smarty_Internal_Template $_smarty_tpl)
             <th>Dieninis tarifas</th>
             <th>Created at</th>
             <th>Viso:(eur)</th>
-            <th>Apmoketa?</th>
         </tr>
+
         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['resultList']->value, 'result', false, 'key');
 $_smarty_tpl->tpl_vars['result']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['key']->value => $_smarty_tpl->tpl_vars['result']->value) {
 $_smarty_tpl->tpl_vars['result']->do_else = false;
-?>
-
+if ($_smarty_tpl->tpl_vars['result']->value['apmoketa'] == '0') {?>
             <tr>
                 <td><?php echo $_smarty_tpl->tpl_vars['result']->value['sunaudota'];?>
 </td>
@@ -103,16 +103,15 @@ $_smarty_tpl->tpl_vars['result']->do_else = false;
 </td>
                 <td><?php echo $_smarty_tpl->tpl_vars['result']->value['sunaudota']*$_smarty_tpl->tpl_vars['result']->value['kaina'];?>
 </td>
-                <td><?php echo $_smarty_tpl->tpl_vars['result']->value['apmoketa'];?>
-</td>
             </tr>
-
+        <?php }?>
         <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-        <a href="/oopex/create"><button>Deklaruoti ir sumoketi<button</a>
-            </table>
 
+            <button type="submit">Deklaruoti ir apmoketi</button>
+            </table>
+    </form>
 
 </main>
 </body>

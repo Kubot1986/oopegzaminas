@@ -66,7 +66,7 @@
                     </td>
                     <td>
 
-                        <input id="apmoketa" name="apmoketa" type="hidden" value=0>
+                        <input id="apmoketa" name="apmoketa" type="hidden" value='0'>
                     </td>
                     <td>
                         <input type="submit" value="Skaiciuoti kaina">

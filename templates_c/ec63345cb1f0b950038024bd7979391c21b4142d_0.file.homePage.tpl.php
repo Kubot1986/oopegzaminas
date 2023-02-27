@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-02-26 16:52:37
+/* Smarty version 4.3.0, created on 2023-02-27 10:17:26
   from 'C:\xampp\htdocs\oopex\src\View\homePage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_63fb80456fb3a8_82391165',
+  'unifunc' => 'content_63fc7526ee7735_99658258',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ec63345cb1f0b950038024bd7979391c21b4142d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\oopex\\src\\View\\homePage.tpl',
-      1 => 1677426751,
+      1 => 1677489441,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63fb80456fb3a8_82391165 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63fc7526ee7735_99658258 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -89,7 +89,7 @@ function content_63fb80456fb3a8_82391165 (Smarty_Internal_Template $_smarty_tpl)
                     </td>
                     <td>
 
-                        <input id="apmoketa" name="apmoketa" type="hidden" value=0>
+                        <input id="apmoketa" name="apmoketa" type="hidden" value='0'>
                     </td>
                     <td>
                         <input type="submit" value="Skaiciuoti kaina">

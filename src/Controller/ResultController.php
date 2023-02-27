@@ -24,11 +24,16 @@ class ResultController
         $smarty->assign('resultList', $resultList);
         $smarty->display(__DIR__ . '/../View/list.tpl');
     }
-
+// ar apmoketa
     public function updateEntry(){
         $resultLists = $this->resultService->getContentFromFile();
-        foreach($resultLists as $resultlist){
-         //rasom rasom
+        {
+            foreach ($resultLists as $key => $resultList) {
+                if ($resultList['apmoketa'] == '0') {
+                    $resultLists[$key]['apmoketa'] = "1";
+                }
+            }
+        $this->resultService->putContentToFile($resultLists);
         }
 
         header("Location: /oopex/list", TRUE, 301); exit;
@@ -37,9 +42,9 @@ class ResultController
 
     public function create(array $request)
     {
-        if (empty($request)) {
-            throw new \Exception('Request is empty.');
-        }
+//        if (empty($request)) {
+//            throw new \Exception("Request is empty.');
+//        }
 
         // Creating new ToDo.
         $this->resultService->create($request);
